@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>geowave-parent</artifactId>
+		<groupId>mil.nga.giat</groupId>
+		<relativePath>../</relativePath>
+		<version>0.9.4-SNAPSHOT</version>
+	</parent>
+	<artifactId>dimensionality-experiments</artifactId>
+	<name>Dimensionality Experiments</name>
+	<description>A module for experiments showing locality preservation advantages in a compact hilbert SFC representation of multi-dimensional data in distributed key-value stores</description>
+	<dependencies>
+		<dependency>
+			<groupId>mil.nga.giat</groupId>
+			<artifactId>geowave-datastore-hbase</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+</project>
