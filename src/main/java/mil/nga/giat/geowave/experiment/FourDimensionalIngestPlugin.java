@@ -63,6 +63,7 @@ public class FourDimensionalIngestPlugin implements
 						recordsPerAvroLong,
 						(long) i);
 			}
+			r.close();
 			return params;
 		}
 		catch (final FileNotFoundException e) {
