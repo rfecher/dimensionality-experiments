@@ -1,4 +1,4 @@
-mil.nga.giat.geowave.core.geotime.ingest.FourDimensionalProvider
-mil.nga.giat.geowave.core.geotime.ingest.ThreeDimensionalProvider
-mil.nga.giat.geowave.core.geotime.ingest.TwoDimensionalProvider
-mil.nga.giat.geowave.core.geotime.ingest.OneDimensionalProvider
+mil.nga.giat.geowave.experiment.FourDimensionalProvider
+mil.nga.giat.geowave.experiment.ThreeDimensionalProvider
+mil.nga.giat.geowave.experiment.TwoDimensionalProvider
+mil.nga.giat.geowave.experiment.OneDimensionalProvider
