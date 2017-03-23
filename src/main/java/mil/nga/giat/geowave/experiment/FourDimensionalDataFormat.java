@@ -16,7 +16,7 @@ public class FourDimensionalDataFormat implements
 			IngestFormatOptionProvider options )
 			throws UnsupportedOperationException {
 		// TODO Auto-generated method stub
-		return null;
+		return new FourDimensionalIngestPlugin();
 	}
 
 	@Override
@@ -24,32 +24,29 @@ public class FourDimensionalDataFormat implements
 			IngestFormatOptionProvider options )
 			throws UnsupportedOperationException {
 		// TODO Auto-generated method stub
-		return null;
+		return new FourDimensionalIngestPlugin();
 	}
 
 	@Override
 	public String getIngestFormatName() {
-		// TODO Auto-generated method stub
-		return null;
+		return "4D";
 	}
 
 	@Override
 	public IngestFormatOptionProvider createOptionsInstances() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public String getIngestFormatDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return "4D data";
 	}
 
 	@Override
 	public AvroFormatPlugin<ExperimentalParams, FourDimensionalData> createAvroFormatPlugin(
 			IngestFormatOptionProvider options )
 			throws UnsupportedOperationException {
-		return null;
+		return new FourDimensionalIngestPlugin();
 	}
 
 }
