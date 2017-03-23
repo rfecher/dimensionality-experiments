@@ -1,5 +1,7 @@
 package mil.nga.giat.geowave.experiment;
 
-public class TDimension extends BaseDimensionDefinition{
+public class TDimension extends
+		BaseDimensionDefinition
+{
 
 }

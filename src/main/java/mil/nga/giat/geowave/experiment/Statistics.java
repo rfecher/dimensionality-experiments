@@ -37,13 +37,11 @@ public class Statistics
 	}
 
 	double getStdDev() {
-		return Math.sqrt(
-				getVariance());
+		return Math.sqrt(getVariance());
 	}
 
 	public double median() {
-		Arrays.sort(
-				data);
+		Arrays.sort(data);
 
 		if ((data.length % 2) == 0) {
 			return (data[(data.length / 2) - 1] + data[data.length / 2]) / 2.0;
@@ -53,9 +51,8 @@ public class Statistics
 
 	@Override
 	public String toString() {
-		return "Statistics [data=" + Arrays.toString(
-				data) + ", size=" + size + ", rangeCount=" + rangeCount + ", entryCount=" + entryCount + "]\n"
-				+ toCSVRow();
+		return "Statistics [data=" + Arrays.toString(data) + ", size=" + size + ", rangeCount=" + rangeCount
+				+ ", entryCount=" + entryCount + "]\n" + toCSVRow();
 	}
 
 	public static String getCSVHeader() {
@@ -83,7 +80,6 @@ public class Statistics
 
 	public void printStats() {
 		// TODO write it to a file instead
-		System.err.println(
-				toCSVRow());
+		System.err.println(toCSVRow());
 	}
 }

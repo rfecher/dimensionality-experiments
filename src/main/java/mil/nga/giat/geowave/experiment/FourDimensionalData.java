@@ -5,7 +5,9 @@ import mil.nga.giat.geowave.core.index.sfc.data.NumericData;
 import mil.nga.giat.geowave.core.store.dimension.NumericDimensionField;
 import mil.nga.giat.geowave.core.store.index.CommonIndexValue;
 
-public class FourDimensionalData implements CommonIndexValue {
+public class FourDimensionalData implements
+		CommonIndexValue
+{
 	private byte[] value;
 	private byte[] visibility = new byte[] {};
 	private ByteArrayId dataId;
@@ -14,7 +16,13 @@ public class FourDimensionalData implements CommonIndexValue {
 	private double z;
 	private double t;
 
-	public FourDimensionalData(ByteArrayId dataId, byte[] value, double x, double y, double z, double t) {
+	public FourDimensionalData(
+			ByteArrayId dataId,
+			byte[] value,
+			double x,
+			double y,
+			double z,
+			double t ) {
 		this.dataId = dataId;
 		this.value = value;
 		this.x = x;
@@ -31,7 +39,8 @@ public class FourDimensionalData implements CommonIndexValue {
 		return value;
 	}
 
-	public void setValue(byte[] value) {
+	public void setValue(
+			byte[] value ) {
 		this.value = value;
 	}
 
@@ -39,7 +48,8 @@ public class FourDimensionalData implements CommonIndexValue {
 		return x;
 	}
 
-	public void setX(double x) {
+	public void setX(
+			double x ) {
 		this.x = x;
 	}
 
@@ -47,7 +57,8 @@ public class FourDimensionalData implements CommonIndexValue {
 		return y;
 	}
 
-	public void setY(double y) {
+	public void setY(
+			double y ) {
 		this.y = y;
 	}
 
@@ -55,7 +66,8 @@ public class FourDimensionalData implements CommonIndexValue {
 		return z;
 	}
 
-	public void setZ(double z) {
+	public void setZ(
+			double z ) {
 		this.z = z;
 	}
 
@@ -63,7 +75,8 @@ public class FourDimensionalData implements CommonIndexValue {
 		return t;
 	}
 
-	public void setT(double t) {
+	public void setT(
+			double t ) {
 		this.t = t;
 	}
 
@@ -73,12 +86,15 @@ public class FourDimensionalData implements CommonIndexValue {
 	}
 
 	@Override
-	public void setVisibility(byte[] visibility) {
+	public void setVisibility(
+			byte[] visibility ) {
 		this.visibility = visibility;
 	}
 
 	@Override
-	public boolean overlaps(NumericDimensionField[] field, NumericData[] rangeData) {
+	public boolean overlaps(
+			NumericDimensionField[] field,
+			NumericData[] rangeData ) {
 		return true;
 	}
 }

@@ -1,0 +1,16 @@
+{
+	"type" : "record",
+	"name" : "ExperimentalParams",
+	"namespace" : "mil.nga.giat.geowave.experiment.avro",
+		"fields" : [{
+				"name" : "num_data",
+				"type" : ["long", "null"],
+				"doc"  : "how many records should be generated from this one"
+			},{
+				"name" : "id",
+				"type" : ["long", "null"],
+				"doc"  : "my id"
+			}
+		],
+	"doc:" : "Generates 4D records"
+}

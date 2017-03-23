@@ -12,7 +12,7 @@ import mil.nga.giat.geowave.core.store.index.PrimaryIndex;
 import mil.nga.giat.geowave.core.store.spi.DimensionalityTypeOptions;
 import mil.nga.giat.geowave.core.store.spi.DimensionalityTypeProviderSpi;
 
-public class FourDimensionalProvider implements
+public class OneDimensionalProvider implements
 		DimensionalityTypeProviderSpi
 {
 	protected static final ByteArrayId X_INDEX_ID = new ByteArrayId(
@@ -36,12 +36,12 @@ public class FourDimensionalProvider implements
 
 	@Override
 	public String getDimensionalityTypeName() {
-		return "4D";
+		return "1D";
 	}
 
 	@Override
 	public String getDimensionalityTypeDescription() {
-		return "4D Experimentation";
+		return "1D Experimentation";
 	}
 
 	@Override
@@ -55,12 +55,8 @@ public class FourDimensionalProvider implements
 				TieredSFCIndexFactory.createSingleTierStrategy(
 						new NumericDimensionDefinition[] {
 							new XDimension(),
-							new YDimension(),
-							new ZDimension(),
-							new TDimension(),
 						},
 						new int[] {
-							15,
 							15,
 							15,
 							15
@@ -82,12 +78,11 @@ public class FourDimensionalProvider implements
 									T_INDEX_ID)
 						}),
 				new ByteArrayId(
-						"FourD_IDX"));
+						"OneD_IDX"));
 	}
 
 	@Override
 	public DimensionalityTypeOptions getOptions() {
 		return null;
 	}
-
 }

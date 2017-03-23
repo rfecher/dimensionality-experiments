@@ -4,11 +4,15 @@ import mil.nga.giat.geowave.core.index.sfc.data.NumericData;
 import mil.nga.giat.geowave.core.store.dimension.NumericDimensionField;
 import mil.nga.giat.geowave.core.store.index.CommonIndexValue;
 
-public class DoubleIndexedField implements CommonIndexValue {
+public class DoubleIndexedField implements
+		CommonIndexValue
+{
 
 	private byte[] visibility = new byte[] {};
 	private double value;
-	public DoubleIndexedField(double value) {
+
+	public DoubleIndexedField(
+			double value ) {
 		this.value = value;
 	}
 
@@ -22,12 +26,15 @@ public class DoubleIndexedField implements CommonIndexValue {
 	}
 
 	@Override
-	public void setVisibility(byte[] visibility) {
+	public void setVisibility(
+			byte[] visibility ) {
 		this.visibility = visibility;
 	}
 
 	@Override
-	public boolean overlaps(NumericDimensionField[] field, NumericData[] rangeData) {
+	public boolean overlaps(
+			NumericDimensionField[] field,
+			NumericData[] rangeData ) {
 		return true;
 	}
 
