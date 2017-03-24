@@ -147,7 +147,7 @@ public class FourDimensionalIngestPlugin implements
 				final String globalVisibility ) {
 			final long numData = input.getNumData();
 			return new CloseableIterator<GeoWaveData<FourDimensionalData>>() {
-				long i;
+				long i = 0;
 
 				@Override
 				public boolean hasNext() {

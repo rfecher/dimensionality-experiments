@@ -1,5 +1,7 @@
 package mil.nga.giat.geowave.experiment;
 
+import java.nio.ByteBuffer;
+
 import mil.nga.giat.geowave.core.index.ByteArrayId;
 import mil.nga.giat.geowave.core.index.PersistenceUtils;
 import mil.nga.giat.geowave.core.index.dimension.NumericDimensionDefinition;
@@ -18,6 +20,8 @@ public class DoubleDimensionField implements
 	private NumericDimensionDefinition definition;
 	private ByteArrayId fieldId;
 
+	public DoubleDimensionField() {}
+
 	public DoubleDimensionField(
 			NumericDimensionDefinition definition,
 			ByteArrayId fieldId ) {
@@ -26,13 +30,26 @@ public class DoubleDimensionField implements
 	}
 
 	public byte[] toBinary() {
-		return PersistenceUtils.toBinary(definition);
+		byte[] def = PersistenceUtils.toBinary(definition);
+		byte[] fieldIdBytes = fieldId.getBytes();
+		ByteBuffer buf = ByteBuffer.allocate(def.length + fieldIdBytes.length + 4);
+		buf.putInt(def.length);
+		buf.put(def);
+		buf.put(fieldIdBytes);
+		return buf.array();
 	}
 
 	public void fromBinary(
 			byte[] bytes ) {
+		ByteBuffer buf = ByteBuffer.wrap(bytes);
+		byte[] def = new byte[buf.getInt()];
+		buf.get(def);
+		byte[] fieldIdBytes = new byte[bytes.length - def.length - 4];
+		buf.get(fieldIdBytes);
+		fieldId = new ByteArrayId(
+				fieldIdBytes);
 		definition = PersistenceUtils.fromBinary(
-				bytes,
+				def,
 				NumericDimensionDefinition.class);
 	}
 

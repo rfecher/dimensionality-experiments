@@ -24,6 +24,9 @@ public class FourDimensionalProvider implements
 	protected static final ByteArrayId T_INDEX_ID = new ByteArrayId(
 			"T");
 
+	protected static final ByteArrayId INDEX_ID = new ByteArrayId(
+			"FourD_IDX");
+
 	@Override
 	public Class<? extends CommonIndexValue>[] getRequiredIndexTypes() {
 		return new Class[] {
@@ -81,8 +84,7 @@ public class FourDimensionalProvider implements
 									new TDimension(),
 									T_INDEX_ID)
 						}),
-				new ByteArrayId(
-						"FourD_IDX"));
+				INDEX_ID);
 	}
 
 	@Override

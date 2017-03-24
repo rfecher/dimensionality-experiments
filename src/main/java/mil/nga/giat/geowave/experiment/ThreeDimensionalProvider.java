@@ -24,6 +24,9 @@ public class ThreeDimensionalProvider implements
 	protected static final ByteArrayId T_INDEX_ID = new ByteArrayId(
 			"T");
 
+	protected static final ByteArrayId INDEX_ID = new ByteArrayId(
+			"ThreeD_IDX");
+
 	@Override
 	public Class<? extends CommonIndexValue>[] getRequiredIndexTypes() {
 		return new Class[] {
@@ -79,8 +82,7 @@ public class ThreeDimensionalProvider implements
 									new TDimension(),
 									T_INDEX_ID)
 						}),
-				new ByteArrayId(
-						"ThreeD_IDX"));
+				INDEX_ID);
 	}
 
 	@Override

@@ -16,6 +16,8 @@ public class FourDimensionalData implements
 	private double z;
 	private double t;
 
+	protected FourDimensionalData() {}
+
 	public FourDimensionalData(
 			ByteArrayId dataId,
 			byte[] value,

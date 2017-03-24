@@ -24,6 +24,9 @@ public class OneDimensionalProvider implements
 	protected static final ByteArrayId T_INDEX_ID = new ByteArrayId(
 			"T");
 
+	protected static final ByteArrayId INDEX_ID = new ByteArrayId(
+			"OneD_IDX");
+
 	@Override
 	public Class<? extends CommonIndexValue>[] getRequiredIndexTypes() {
 		return new Class[] {
@@ -77,8 +80,7 @@ public class OneDimensionalProvider implements
 									new TDimension(),
 									T_INDEX_ID)
 						}),
-				new ByteArrayId(
-						"OneD_IDX"));
+				INDEX_ID);
 	}
 
 	@Override

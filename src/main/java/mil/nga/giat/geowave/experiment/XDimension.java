@@ -4,4 +4,9 @@ public class XDimension extends
 		BaseDimensionDefinition
 {
 
+	public XDimension() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 }

@@ -1,17 +1,21 @@
 package mil.nga.giat.geowave.experiment;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
 import mil.nga.giat.geowave.core.index.ByteArrayId;
 import mil.nga.giat.geowave.core.store.adapter.AbstractDataAdapter;
+import mil.nga.giat.geowave.core.store.adapter.AdapterPersistenceEncoding;
+import mil.nga.giat.geowave.core.store.adapter.IndexedAdapterPersistenceEncoding;
 import mil.nga.giat.geowave.core.store.adapter.NativeFieldHandler.RowBuilder;
 import mil.nga.giat.geowave.core.store.data.PersistentValue;
 import mil.nga.giat.geowave.core.store.data.field.FieldReader;
 import mil.nga.giat.geowave.core.store.data.field.FieldUtils;
 import mil.nga.giat.geowave.core.store.data.field.FieldWriter;
 import mil.nga.giat.geowave.core.store.index.CommonIndexModel;
+import mil.nga.giat.geowave.core.store.index.PrimaryIndex;
 
 public class FourDimensionalDataAdapter extends
 		AbstractDataAdapter<FourDimensionalData>
@@ -28,6 +32,29 @@ public class FourDimensionalDataAdapter extends
 			"T");
 	private Random random = new Random(
 			1000L);
+
+	public FourDimensionalDataAdapter() {
+		super();
+		dimensionMatchingFieldHandlers = new HashMap<>();
+		dimensionMatchingFieldHandlers.put(
+				X_ID,
+				new FourDimensionalDataFieldHandler(
+						X_ID));
+		dimensionMatchingFieldHandlers.put(
+				Y_ID,
+				new FourDimensionalDataFieldHandler(
+						Y_ID));
+		dimensionMatchingFieldHandlers.put(
+				Z_ID,
+				new FourDimensionalDataFieldHandler(
+						Z_ID));
+		dimensionMatchingFieldHandlers.put(
+				T_ID,
+				new FourDimensionalDataFieldHandler(
+						T_ID));
+		typeMatchingFieldHandlers = new HashMap<>();
+		nativeFieldHandlers = new ArrayList<>();
+	}
 
 	@Override
 	public ByteArrayId getAdapterId() {
@@ -87,6 +114,16 @@ public class FourDimensionalDataAdapter extends
 	}
 
 	@Override
+	public FourDimensionalData decode(
+			IndexedAdapterPersistenceEncoding data,
+			PrimaryIndex index ) {
+		// TODO Auto-generated method stub
+		return super.decode(
+				data,
+				index);
+	}
+
+	@Override
 	public FieldWriter<FourDimensionalData, Object> getWriter(
 			ByteArrayId fieldId ) {
 		return (FieldWriter) FieldUtils.getDefaultWriterForClass(Double.class);
@@ -121,5 +158,14 @@ public class FourDimensionalDataAdapter extends
 
 		};
 	}
+
+	@Override
+	public byte[] toBinary() {
+		return new byte[] {};
+	}
+
+	@Override
+	public void fromBinary(
+			byte[] bytes ) {}
 
 }
